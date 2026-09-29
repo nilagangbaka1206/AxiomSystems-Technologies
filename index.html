@@ -53,7 +53,23 @@ section{padding:95px 0}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .card{border:1px solid var(--line);border-radius:12px;padding:30px;background:#fff;transition:.25s}
 .card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#c8d7e9}
-.icon{width:50px;height:50px;border-radius:10px;background:#eaf3ff;color:var(--blue);display:grid;place-items:center;font-size:22px;margin-bottom:20px}
+.icon{
+    width:50px;
+    height:50px;
+    border-radius:10px;
+    background:#eaf3ff;
+    color:var(--blue);
+    display:grid;
+    place-items:center;
+    font-size:22px;
+    margin-bottom:20px;
+}
+
+.icon svg{
+    width:25px;
+    height:25px;
+    stroke-width:2;
+}
 .card h3{font-size:20px;margin-bottom:9px}.card p{color:var(--muted);font-size:14px}
 
 .dark{background:var(--navy);color:#fff}.dark .section-head p{color:#aebdd0}
@@ -110,7 +126,7 @@ footer ul{list-style:none}footer li{margin:7px 0}
   <div class="container hero-grid">
     <div>
       <div class="eyebrow">AXIOM SYSTEMS TECHNOLOGIES CORP.</div>
-      <h1>Engineering the technology behind your business.</h1>
+      <h1>Technology built around your business.</h1>
       <p>Secure, scalable and reliable IT infrastructure solutions designed to connect people, systems and organizations.</p>
       <div class="actions">
         <a class="btn primary" href="#solutions">EXPLORE SOLUTIONS</a>
@@ -124,20 +140,20 @@ footer ul{list-style:none}footer li{margin:7px 0}
       <div class="connector"></div>
       <div class="node"><strong>Users & Applications</strong><small>Reliable access everywhere</small></div>
     </div>
-  </div>
+  </div>	
 </header>
 
 <section id="about">
   <div class="container">
     <div class="section-head">
       <div class="eyebrow">WHO WE ARE</div>
-      <h2>Technology built around your requirements.</h2>
-      <p>Axiom Systems Technologies Corp. delivers technology solutions that help organizations design, deploy and support dependable IT environments.</p>
+      <h2>Technology built around your business.</h2>
+      <p>Axiom Systems Technologies Corp. is an IT services company specializing in the design, deployment, integration, and management of secure, scalable, and high-performance IT infrastructure.</p>
     </div>
     <div class="cards">
-      <div class="card"><div class="icon">◈</div><h3>Engineering First</h3><p>Solutions are approached from architecture, performance, security and operational requirements.</p></div>
-      <div class="card"><div class="icon">⌁</div><h3>End-to-End Delivery</h3><p>From planning and design through implementation, integration and support.</p></div>
-      <div class="card"><div class="icon">✓</div><h3>Business Focused</h3><p>Technology is aligned with the organization's users, applications and business objectives.</p></div>
+      <div class="card"><div class="icon"><i data-lucide="network"></i></div><h3>01 — Infrastructure First</h3><p>We design reliable IT environments around performance, scalability, security, and the specific requirements of your organization.</p></div>
+      <div class="card"><div class="icon"><i data-lucide="route"></i></div><h3>02 — End-to-End Delivery</h3><p>From consulting and architecture to implementation, integration, optimization, and ongoing support, we help deliver solutions throughout their lifecycle.</p></div>
+      <div class="card"><div class="icon"><i data-lucide="shield-check"></i></div><h3>03 — Secure & Business Driven</h3><p>We align technology with business objectives while strengthening security, improving operational efficiency, and enabling organizations to scale.</p></div>
     </div>
   </div>
 </section>
@@ -229,12 +245,19 @@ footer ul{list-style:none}footer li{margin:7px 0}
   </div>
 </footer>
 
+<script src="https://unpkg.com/lucide@latest"></script>
+
 <script>
+lucide.createIcons();
+
 function toggleMenu(){
-  document.getElementById("navlinks").classList.toggle("show");
+	document.getElementById("navlinks").classList.toggle("show");
 }
+
 document.querySelectorAll(".navlinks a").forEach(a=>{
-  a.addEventListener("click",()=>document.getElementById("navlinks").classList.remove("show"));
+	a.addEventListener("click", () => {
+		document.getElementById("navlinks").classList.remove("show");
+	});
 });
 </script>
 </body>
