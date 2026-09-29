@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Axiom Systems Technologies Corp.</title>
+<meta name="description" content="Axiom Systems Technologies Corp. — Technology infrastructure, cybersecurity, networking and systems integration solutions.">
+<style>
+:root{
+  --navy:#081426;--navy2:#0d2039;--blue:#1769e8;--cyan:#19c8e8;
+  --white:#fff;--light:#f4f7fb;--text:#1b2638;--muted:#66758a;
+  --line:#dfe6ef;--shadow:0 18px 50px rgba(8,20,38,.10)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text);background:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(8,20,38,.94);backdrop-filter:blur(12px);color:#fff}
+.navbar{height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:21px;font-weight:800;letter-spacing:.4px}
+.logo span{color:var(--cyan)}
+.navlinks{display:flex;gap:30px;align-items:center;font-size:13px;font-weight:700}
+.navlinks a{opacity:.86;transition:.2s}.navlinks a:hover{opacity:1;color:var(--cyan)}
+.navbtn{padding:11px 18px;border:1px solid rgba(255,255,255,.3);border-radius:6px}
+.menu{display:none;font-size:28px;cursor:pointer}
+
+.hero{min-height:100vh;padding-top:76px;color:#fff;display:flex;align-items:center;
+background:
+radial-gradient(circle at 75% 30%,rgba(25,200,232,.22),transparent 28%),
+linear-gradient(135deg,rgba(8,20,38,.98),rgba(11,36,65,.93)),
+linear-gradient(90deg,#081426,#123b68);position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:600px;height:600px;border:1px solid rgba(25,200,232,.15);border-radius:50%;right:-180px;top:15%;box-shadow:0 0 0 70px rgba(25,200,232,.025),0 0 0 140px rgba(25,200,232,.02)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center;position:relative;z-index:2}
+.eyebrow{color:var(--cyan);font-weight:800;letter-spacing:2.5px;font-size:12px;margin-bottom:18px}
+h1{font-size:clamp(45px,6vw,78px);line-height:1.02;letter-spacing:-2px;margin-bottom:25px}
+.hero p{font-size:18px;color:#c9d5e5;max-width:650px;margin-bottom:34px}
+.actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 23px;border-radius:6px;font-weight:800;font-size:13px;transition:.2s}
+.primary{background:var(--blue);color:#fff}.primary:hover{transform:translateY(-2px);background:#0f5cd4}
+.secondary{border:1px solid rgba(255,255,255,.35);color:#fff}.secondary:hover{background:rgba(255,255,255,.08)}
+.network-card{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);padding:28px;border-radius:14px;box-shadow:var(--shadow)}
+.network-card .node{padding:15px 18px;border:1px solid rgba(25,200,232,.3);border-radius:8px;margin:12px 0;background:rgba(0,0,0,.13)}
+.node strong{display:block}.node small{color:#aebdd0}
+.connector{height:20px;width:2px;background:var(--cyan);margin:auto;opacity:.7}
+
+section{padding:95px 0}
+.section-head{text-align:center;max-width:720px;margin:0 auto 50px}
+.section-head .eyebrow{margin-bottom:10px}
+.section-head h2{font-size:42px;line-height:1.1;margin-bottom:15px}
+.section-head p{color:var(--muted)}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{border:1px solid var(--line);border-radius:12px;padding:30px;background:#fff;transition:.25s}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#c8d7e9}
+.icon{width:50px;height:50px;border-radius:10px;background:#eaf3ff;color:var(--blue);display:grid;place-items:center;font-size:22px;margin-bottom:20px}
+.card h3{font-size:20px;margin-bottom:9px}.card p{color:var(--muted);font-size:14px}
+
+.dark{background:var(--navy);color:#fff}.dark .section-head p{color:#aebdd0}
+.dark .card{background:#0d2039;border-color:#203954}.dark .card p{color:#aebdd0}.dark .icon{background:#12345b;color:var(--cyan)}
+
+.services{background:var(--light)}
+.service-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.service{background:#fff;padding:22px;border:1px solid var(--line);border-radius:10px;display:flex;gap:18px}
+.service b{display:block;margin-bottom:3px}.service span{color:var(--muted);font-size:13px}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:45px}
+.stat{padding:30px;text-align:center;border:1px solid rgba(255,255,255,.13);border-radius:10px}
+.stat strong{display:block;font-size:34px;color:var(--cyan)}.stat span{font-size:12px;color:#b8c6d6}
+
+.cta{background:linear-gradient(135deg,#1769e8,#124da7);color:#fff;text-align:center}
+.cta h2{font-size:44px;line-height:1.1;margin-bottom:15px}.cta p{color:#dbeaff;max-width:650px;margin:0 auto 28px}
+.cta .secondary{border-color:rgba(255,255,255,.5)}
+
+footer{background:#050d18;color:#aebbd0;padding:55px 0 25px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:50px;margin-bottom:40px}
+footer h3,footer h4{color:#fff;margin-bottom:12px}footer p,footer li{font-size:13px}
+footer ul{list-style:none}footer li{margin:7px 0}
+.copy{border-top:1px solid #1a2b41;padding-top:20px;font-size:12px}
+
+@media(max-width:850px){
+ .navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:var(--navy);padding:20px;flex-direction:column;gap:18px}
+ .navlinks.show{display:flex}.menu{display:block}
+ .hero-grid{grid-template-columns:1fr;gap:35px}.hero{padding-bottom:70px}
+ .cards{grid-template-columns:1fr}.service-list{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}
+ .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){
+ h1{font-size:48px}.section-head h2,.cta h2{font-size:34px}
+ section{padding:72px 0}.stats{grid-template-columns:1fr 1fr}
+ .footer-grid{grid-template-columns:1fr}.navbar{height:68px}
+ .navlinks{top:68px}.hero{padding-top:68px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container navbar">
+    <a class="logo" href="#home">AXIOM<span>.</span></a>
+    <div class="navlinks" id="navlinks">
+      <a href="#about">ABOUT</a><a href="#solutions">SOLUTIONS</a><a href="#services">SERVICES</a>
+      <a href="#projects">PROJECTS</a><a href="#contact" class="navbtn">CONTACT US</a>
+    </div>
+    <div class="menu" onclick="toggleMenu()">☰</div>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">AXIOM SYSTEMS TECHNOLOGIES CORP.</div>
+      <h1>Engineering the technology behind your business.</h1>
+      <p>Secure, scalable and reliable IT infrastructure solutions designed to connect people, systems and organizations.</p>
+      <div class="actions">
+        <a class="btn primary" href="#solutions">EXPLORE SOLUTIONS</a>
+        <a class="btn secondary" href="#contact">TALK TO OUR TEAM</a>
+      </div>
+    </div>
+    <div class="network-card">
+      <div class="node"><strong>Enterprise Core</strong><small>Secure & resilient infrastructure</small></div>
+      <div class="connector"></div>
+      <div class="node"><strong>Network & Wireless</strong><small>High-performance connectivity</small></div>
+      <div class="connector"></div>
+      <div class="node"><strong>Users & Applications</strong><small>Reliable access everywhere</small></div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">WHO WE ARE</div>
+      <h2>Technology built around your requirements.</h2>
+      <p>Axiom Systems Technologies Corp. delivers technology solutions that help organizations design, deploy and support dependable IT environments.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="icon">◈</div><h3>Engineering First</h3><p>Solutions are approached from architecture, performance, security and operational requirements.</p></div>
+      <div class="card"><div class="icon">⌁</div><h3>End-to-End Delivery</h3><p>From planning and design through implementation, integration and support.</p></div>
+      <div class="card"><div class="icon">✓</div><h3>Business Focused</h3><p>Technology is aligned with the organization's users, applications and business objectives.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="solutions">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">SOLUTIONS</div>
+      <h2>Infrastructure for the connected enterprise.</h2>
+      <p>Build a strong technology foundation across connectivity, security, data center and cloud environments.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="icon">⌁</div><h3>Network Infrastructure</h3><p>Campus, LAN, WAN, switching, routing and network architecture.</p></div>
+      <div class="card"><div class="icon">◉</div><h3>Cybersecurity</h3><p>Security architecture, firewalls, access control and secure connectivity.</p></div>
+      <div class="card"><div class="icon">⌁</div><h3>Wireless & Mobility</h3><p>Enterprise Wi-Fi, high-density deployments and wireless optimization.</p></div>
+      <div class="card"><div class="icon">▣</div><h3>Data Center</h3><p>Core infrastructure, compute, storage and resilient data center networks.</p></div>
+      <div class="card"><div class="icon">☁</div><h3>Cloud & SASE</h3><p>Modern connectivity and security architectures for distributed users.</p></div>
+      <div class="card"><div class="icon">+</div><h3>Systems Integration</h3><p>Integration of infrastructure platforms into cohesive technology environments.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">SERVICES</div>
+      <h2>From architecture to operations.</h2>
+      <p>Technical services supporting the complete lifecycle of your infrastructure.</p>
+    </div>
+    <div class="service-list">
+      <div class="service"><div class="icon">01</div><div><b>Network Design & Architecture</b><span>Requirements, high-level design, low-level design and implementation planning.</span></div></div>
+      <div class="service"><div class="icon">02</div><div><b>Implementation & Deployment</b><span>Installation, configuration, migration, integration and commissioning.</span></div></div>
+      <div class="service"><div class="icon">03</div><div><b>Assessment & Optimization</b><span>Infrastructure assessment, troubleshooting, performance and RF optimization.</span></div></div>
+      <div class="service"><div class="icon">04</div><div><b>Managed & Technical Support</b><span>Operational support, maintenance and technical assistance.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">PROJECT EXPERIENCE</div>
+      <h2>Technology across demanding environments.</h2>
+      <p>Showcase your completed projects here with actual customer-approved project information and images.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="icon">H</div><h3>Hospitality</h3><p>Guest Wi-Fi, enterprise networking, IPTV and integrated technology infrastructure.</p></div>
+      <div class="card"><div class="icon">G</div><h3>Government & Education</h3><p>Secure and reliable connectivity for mission-critical environments.</p></div>
+      <div class="card"><div class="icon">E</div><h3>Enterprise</h3><p>Scalable network, security and infrastructure solutions for business operations.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">OUR APPROACH</div>
+      <h2>Designed. Integrated. Supported.</h2>
+      <p>Every engagement can be structured around clear technical requirements and measurable deliverables.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong>01</strong><span>ASSESS</span></div>
+      <div class="stat"><strong>02</strong><span>DESIGN</span></div>
+      <div class="stat"><strong>03</strong><span>DEPLOY</span></div>
+      <div class="stat"><strong>04</strong><span>SUPPORT</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="container">
+    <h2>Let's build your next technology solution.</h2>
+    <p>Tell us what you are planning, upgrading or troubleshooting. Our team can help define the right technical approach.</p>
+    <div class="actions" style="justify-content:center">
+      <a class="btn secondary" href="mailto:info@axiomsystems.tech">EMAIL US</a>
+      <a class="btn secondary" href="tel:+6320000000">CALL US</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><h3>AXIOM<span style="color:var(--cyan)">.</span></h3><p>Axiom Systems Technologies Corp.<br>Technology infrastructure and systems integration.</p></div>
+      <div><h4>QUICK LINKS</h4><ul><li><a href="#about">About Us</a></li><li><a href="#solutions">Solutions</a></li><li><a href="#services">Services</a></li></ul></div>
+      <div><h4>CONTACT</h4><ul><li>Philippines</li><li>info@axiomsystems.tech</li><li>+63 2 0000 0000</li></ul></div>
+    </div>
+    <div class="copy">© 2026 Axiom Systems Technologies Corp. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById("navlinks").classList.toggle("show");
+}
+document.querySelectorAll(".navlinks a").forEach(a=>{
+  a.addEventListener("click",()=>document.getElementById("navlinks").classList.remove("show"));
+});
+</script>
+</body>
