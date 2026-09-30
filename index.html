@@ -7,13 +7,13 @@
 <meta name="description" content="Axiom Systems Technologies Corp. — Technology infrastructure, cybersecurity, networking and systems integration solutions.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#06172e; --ink2:#0d2848; --paper:#edf1f5; --white:#fff;
   --fiber:#ffd23f; --steel:#6f86a3; --line:#cbd5e1; --text:#12233b;
-  --display:"Bricolage Grotesque","Segoe UI",Arial,sans-serif;
-  --body:"IBM Plex Sans","Segoe UI",Arial,sans-serif;
+  --display:Sora,"Segoe UI",Arial,sans-serif;
+  --body:Inter,"Segoe UI",Arial,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:76px}
@@ -21,15 +21,14 @@ body{font-family:var(--body);color:var(--text);background:var(--paper);line-heig
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:3px solid var(--fiber);outline-offset:3px}
 .container{width:min(1160px,90%);margin:auto}
-h1,h2,h3{font-family:var(--display);line-height:1.05;letter-spacing:-.02em}
+h1,h2,h3{font-family:var(--display);line-height:1.15;letter-spacing:-.015em}
 section{padding:110px 0}
 
 /* NAV */
 nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(6,23,46,.95);backdrop-filter:blur(10px);color:#fff}
 .navbar{height:76px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:var(--display);font-size:24px;font-weight:800;letter-spacing:.02em;display:flex;align-items:center;gap:10px}
-.logo i{width:22px;height:22px;border:3px solid var(--fiber);border-radius:50%;position:relative;display:block}
-.logo i:after{content:"";position:absolute;inset:3px;background:var(--fiber);border-radius:50%}
+.logo{font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:21px;font-weight:800;letter-spacing:.4px}
+.logo span{color:var(--fiber)}
 .navlinks{display:flex;gap:30px;align-items:center;font-size:14px;font-weight:500}
 .navlinks a{opacity:.8;transition:opacity .2s,color .2s}
 .navlinks a:hover{opacity:1;color:var(--fiber)}
@@ -42,7 +41,7 @@ nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(6,23,46,.95);back
 .hero:before{content:"";position:absolute;left:0;top:0;bottom:0;width:26px;background:
   repeating-linear-gradient(to bottom,transparent 0 28px,rgba(255,255,255,.22) 28px 30px),var(--ink2);border-right:1px solid #1d3e69}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;padding:60px 0}
-.hero h1{font-size:clamp(44px,6.2vw,84px);font-weight:800;margin-bottom:26px}
+.hero h1{font-size:clamp(36px,4.9vw,66px);font-weight:700;margin-bottom:26px}
 .hero p{font-size:18px;color:#b9c8dc;max-width:560px;margin-bottom:36px}
 .actions{display:flex;gap:14px;flex-wrap:wrap}
 .btn{display:inline-block;padding:15px 26px;border-radius:2px;font-weight:600;font-size:15px;transition:transform .2s,background .2s}
@@ -59,34 +58,37 @@ nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(6,23,46,.95);back
 .topo .core{fill:var(--fiber)}
 .topo text{font-family:var(--body);font-size:14px;font-weight:500;fill:#dbe6f4}
 .topo .sub{font-size:11px;fill:var(--steel);font-weight:400}
-.topo .hub{font-family:var(--display);font-size:13px;font-weight:800;fill:var(--ink);letter-spacing:.06em}
+.topo .hub{font-family:var(--display);font-size:12px;font-weight:700;fill:var(--ink);letter-spacing:.06em}
 @keyframes travel{to{stroke-dashoffset:-184}}
 
 /* ABOUT */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px}
-.about h2{font-size:clamp(36px,4.6vw,58px);font-weight:700}
+.art{width:100%;height:auto;border-radius:14px;display:block;margin-top:36px}
+.sol-top{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center;margin-bottom:56px}
+.sol-top .sol-head{margin:0}.sol-top .art{margin:0}
+.about h2{font-size:clamp(30px,3.8vw,46px);font-weight:700}
 .about .lead{font-size:20px;margin-bottom:34px}
 .about dl div{padding:18px 0;border-top:1px solid var(--line)}
-.about dt{font-family:var(--display);font-weight:700;font-size:20px}
+.about dt{font-family:var(--display);font-weight:600;font-size:18px}
 .about dd{color:#4a5d78;font-size:15px}
 
 /* SOLUTIONS — principles, not cards */
 .dark{background:var(--ink);color:#fff}
 .sol-head{max-width:720px;margin-bottom:56px}
-.sol-head h2{font-size:clamp(36px,4.6vw,58px);font-weight:700;margin-bottom:16px}
+.sol-head h2{font-size:clamp(30px,3.8vw,46px);font-weight:700;margin-bottom:16px}
 .sol-head p{color:#9fb2cb;font-size:17px}
 .sol{display:grid;grid-template-columns:1.1fr 1.2fr 40px;gap:30px;align-items:center;padding:28px 0 28px 22px;border-top:1px solid #1d3a5f;position:relative;transition:background .25s}
 .sol:last-child{border-bottom:1px solid #1d3a5f}
 .sol:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--fiber);transform:scaleY(0);transition:transform .25s}
 .sol:hover{background:var(--ink2)}.sol:hover:before{transform:scaleY(1)}
-.sol h3{font-size:clamp(24px,3vw,34px);font-weight:600;color:#fff}
+.sol h3{font-size:clamp(19px,2.2vw,26px);font-weight:600;color:#fff}
 .sol b{display:block;font-size:15px;color:var(--fiber);margin-bottom:3px;font-weight:600}
 .sol p{color:#9fb2cb;font-size:15px}
 .sol svg{width:26px;height:26px;color:var(--fiber)}
 
 /* BRANDS — one shared grid, logos rest in grayscale */
 .brand-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:44px;flex-wrap:wrap}
-.brand-head h2{font-size:clamp(34px,4vw,50px);font-weight:700;max-width:560px}
+.brand-head h2{font-size:clamp(28px,3.3vw,40px);font-weight:700;max-width:560px}
 .brand-head p{max-width:400px;color:#4a5d78}
 .brand-grid{display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);background:var(--white)}
 .brand-card{height:118px;display:flex;align-items:center;justify-content:center;padding:22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -95,29 +97,29 @@ nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(6,23,46,.95);back
 
 /* LIFECYCLE */
 .services{background:var(--white)}
-.services h2{font-size:clamp(36px,4.6vw,58px);font-weight:700;max-width:720px;margin-bottom:64px}
+.services h2{font-size:clamp(30px,3.8vw,46px);font-weight:700;max-width:720px;margin-bottom:64px}
 .track{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;position:relative}
 .track:before{content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:var(--ink)}
 .stage{position:relative;padding-top:40px}
 .stage:before{content:"";position:absolute;top:0;left:0;width:20px;height:20px;border-radius:50%;background:var(--fiber);border:3px solid var(--ink)}
-.stage h3{font-size:28px;font-weight:700;margin-bottom:4px}
+.stage h3{font-size:24px;font-weight:700;margin-bottom:4px}
 .stage em{font-style:normal;font-weight:600;font-size:14px;color:var(--steel);display:block;margin-bottom:10px}
 .stage p{font-size:15px;color:#4a5d78}
 
 /* INDUSTRIES */
 .ind-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
-.ind-grid h2{font-size:clamp(34px,4vw,50px);font-weight:700;margin-bottom:16px}
+.ind-grid h2{font-size:clamp(28px,3.3vw,40px);font-weight:700;margin-bottom:16px}
 .ind-grid > div:first-child p{color:#4a5d78}
 .ind-list{display:grid;grid-template-columns:1fr 1fr;column-gap:36px}
 .ind{display:flex;gap:14px;padding:20px 0;border-top:1px solid var(--line)}
 .ind svg{width:22px;height:22px;flex:none;margin-top:3px;color:var(--ink)}
-.ind b{display:block;font-family:var(--display);font-size:19px}
+.ind b{display:block;font-family:var(--display);font-size:16px}
 .ind span{font-size:14px;color:#4a5d78;display:block;line-height:1.5}
 
 /* CTA + FOOTER */
 .cta{background:var(--fiber);color:var(--ink)}
 .cta-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:60px;align-items:end}
-.cta h2{font-size:clamp(38px,5.4vw,72px);font-weight:800}
+.cta h2{font-size:clamp(32px,4.3vw,56px);font-weight:700}
 .cta p{font-size:18px;margin-bottom:24px}
 .cta .btn{background:var(--ink);color:#fff;margin:0 10px 10px 0}
 .cta .btn:hover{background:#fff;color:var(--ink)}
@@ -132,7 +134,7 @@ footer a:hover{color:var(--fiber)}
   section{padding:76px 0}
   .navlinks{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;gap:18px;padding:22px;background:var(--ink)}
   .navlinks.show{display:flex}.menu{display:block}
-  .hero-grid,.about-grid,.ind-grid,.cta-grid{grid-template-columns:1fr;gap:40px}
+  .hero-grid,.about-grid,.ind-grid,.cta-grid,.sol-top{grid-template-columns:1fr;gap:40px}
   .hero{padding-left:0}.hero-grid{padding-left:34px}
   .sol{grid-template-columns:1fr 32px;gap:10px 16px}.sol > div:nth-child(2){grid-column:1/-1;order:3}
   .brand-grid{grid-template-columns:repeat(3,1fr)}
@@ -152,7 +154,7 @@ footer a:hover{color:var(--fiber)}
 
 <nav>
   <div class="container navbar">
-    <a class="logo" href="#home"><i></i>AXIOM</a>
+    <a class="logo" href="#home">AXIOM<span>.</span></a>
     <div class="navlinks" id="navlinks">
       <a href="#about">About</a><a href="#solutions">Solutions</a><a href="#brands">Platforms</a><a href="#services">How we work</a>
       <a href="#industries">Industries</a><a href="#contact" class="navbtn">Contact us</a>
@@ -200,7 +202,7 @@ footer a:hover{color:var(--fiber)}
 
 <section class="about" id="about">
   <div class="container about-grid">
-    <h2>Technology built around your business.</h2>
+    <div><h2>Technology built around your business.</h2><svg class="art" viewBox="0 0 420 300" role="img" aria-label="Network rack with switches and patch cables"><defs><pattern id="pt" width="16" height="16" patternUnits="userSpaceOnUse"><rect x="2" y="2" width="10" height="10" rx="1.5" fill="#12345b" stroke="#2c5384"/></pattern></defs><rect width="420" height="300" rx="14" fill="#0d2848"/><rect x="50" y="24" width="270" height="252" rx="6" fill="#06172e" stroke="#27476f"/><rect x="62" y="40" width="246" height="56" rx="3" fill="#0d2848" stroke="#27476f"/><rect x="74" y="54" width="176" height="28" fill="url(#pt)"/><circle cx="272" cy="60" r="4" fill="#ffd23f"/><circle cx="288" cy="60" r="4" fill="#ffd23f" opacity=".4"/><rect x="266" y="74" width="30" height="4" fill="#27476f"/><rect x="62" y="110" width="246" height="56" rx="3" fill="#0d2848" stroke="#27476f"/><rect x="74" y="124" width="176" height="28" fill="url(#pt)"/><circle cx="272" cy="130" r="4" fill="#ffd23f"/><circle cx="288" cy="130" r="4" fill="#ffd23f" opacity=".4"/><rect x="266" y="144" width="30" height="4" fill="#27476f"/><rect x="62" y="180" width="246" height="56" rx="3" fill="#0d2848" stroke="#27476f"/><rect x="74" y="194" width="176" height="28" fill="url(#pt)"/><circle cx="272" cy="200" r="4" fill="#ffd23f"/><circle cx="288" cy="200" r="4" fill="#ffd23f" opacity=".4"/><rect x="266" y="214" width="30" height="4" fill="#27476f"/><g fill="none" stroke="#ffd23f" stroke-width="3" stroke-linecap="round"><path d="M250 68C350 68 340 118 385 118"/><path d="M250 138C345 138 345 188 385 188"/><path d="M250 208C350 208 345 68 385 68"/></g><g fill="#ffd23f"><circle cx="385" cy="68" r="5"/><circle cx="385" cy="118" r="5"/><circle cx="385" cy="188" r="5"/></g></svg></div>
     <div>
       <p class="lead">Axiom Systems Technologies Corp. is an IT services company specializing in the design, deployment, integration and management of secure, scalable, high-performance IT infrastructure.</p>
       <dl>
@@ -214,10 +216,10 @@ footer a:hover{color:var(--fiber)}
 
 <section class="dark" id="solutions">
   <div class="container">
-    <div class="sol-head">
+    <div class="sol-top"><div class="sol-head">
       <h2>Six things your infrastructure has to get right.</h2>
       <p>A strong technology foundation across connectivity, security, data center and cloud environments.</p>
-    </div>
+    </div><svg class="art" viewBox="0 0 320 240" role="img" aria-label="Shield surrounded by connected security layers"><rect width="320" height="240" rx="14" fill="#0d2848"/><g fill="none" stroke="#27476f" stroke-width="1.5" stroke-dasharray="4 6"><circle cx="160" cy="120" r="105"/><circle cx="160" cy="120" r="72"/></g><g fill="#ffd23f"><circle cx="265" cy="120" r="5"/><circle cx="55" cy="120" r="5"/><circle cx="160" cy="15" r="5"/><circle cx="234" cy="194" r="5"/><circle cx="86" cy="46" r="5"/></g><path d="M160 40L220 62V118C220 156 192 184 160 198C128 184 100 156 100 118V62Z" fill="#06172e" stroke="#ffd23f" stroke-width="3"/><path d="M132 120l20 20 38-42" fill="none" stroke="#ffd23f" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     <div class="sol"><div><h3>Everything connects through it.</h3></div><div><b>Network Infrastructure</b><p>Campus, LAN, WAN, switching, routing and network architecture.</p></div><i data-lucide="network"></i></div>
     <div class="sol"><div><h3>Access is earned, not assumed.</h3></div><div><b>Cybersecurity</b><p>Security architecture, firewalls, access control and secure connectivity.</p></div><i data-lucide="shield-check"></i></div>
     <div class="sol"><div><h3>People don't stay at their desks.</h3></div><div><b>Wireless &amp; Mobility</b><p>Enterprise Wi-Fi, high-density deployments and wireless optimization.</p></div><i data-lucide="wifi"></i></div>
@@ -271,7 +273,7 @@ footer a:hover{color:var(--fiber)}
   <div class="container ind-grid">
     <div>
       <h2>Built for the environment you run.</h2>
-      <p>Secure, scalable and reliable infrastructure across diverse industries.</p>
+      <p>Secure, scalable and reliable infrastructure across diverse industries.</p><svg class="art" viewBox="0 0 420 300" role="img" aria-label="Floor plan with Wi-Fi coverage heatmap"><defs><radialGradient id="hm"><stop offset="0" stop-color="#ffd23f" stop-opacity=".85"/><stop offset=".55" stop-color="#ffd23f" stop-opacity=".25"/><stop offset="1" stop-color="#ffd23f" stop-opacity="0"/></radialGradient><clipPath id="fp"><rect x="20" y="20" width="380" height="260"/></clipPath></defs><rect width="420" height="300" rx="14" fill="#0d2848"/><g clip-path="url(#fp)"><circle cx="110" cy="100" r="120" fill="url(#hm)"/><circle cx="310" cy="90" r="115" fill="url(#hm)"/><circle cx="210" cy="225" r="125" fill="url(#hm)"/></g><g fill="none" stroke="#6f86a3" stroke-width="2"><rect x="20" y="20" width="380" height="260"/><path d="M20 150H150M190 150H400M210 20V110M210 150V280M300 150V210"/></g><g fill="#fff" stroke="#06172e" stroke-width="3"><circle cx="110" cy="100" r="7"/><circle cx="310" cy="90" r="7"/><circle cx="210" cy="225" r="7"/></g></svg>
     </div>
     <div class="ind-list">
       <div class="ind"><i data-lucide="hotel"></i><div><b>Hospitality</b><span>Guest Wi-Fi, enterprise networking, IPTV and security.</span></div></div>
@@ -300,7 +302,7 @@ footer a:hover{color:var(--fiber)}
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div><h3>AXIOM</h3><p>Axiom Systems Technologies Corp.<br>Technology infrastructure and systems integration.</p></div>
+      <div><h3 style="font-family:Inter,'Segoe UI',Arial,sans-serif">AXIOM<span style="color:var(--fiber)">.</span></h3><p>Axiom Systems Technologies Corp.<br>Technology infrastructure and systems integration.</p></div>
       <div><h4>Quick links</h4><ul><li><a href="#about">About us</a></li><li><a href="#solutions">Solutions</a></li><li><a href="#brands">Platforms</a></li><li><a href="#services">How we work</a></li><li><a href="#industries">Industries</a></li></ul></div>
       <div><h4>Contact</h4><ul><li>Philippines</li><li>info@axiomsystems.tech</li><li>+63 9171562846</li></ul></div>
     </div>
