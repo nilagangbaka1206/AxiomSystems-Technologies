@@ -39,8 +39,6 @@ h1{font-size:clamp(45px,6vw,78px);line-height:1.02;letter-spacing:-2px;margin-bo
 .btn{display:inline-block;padding:14px 23px;border-radius:6px;font-weight:800;font-size:13px;transition:.2s}
 .primary{background:var(--blue);color:#fff}.primary:hover{transform:translateY(-2px);background:#0f5cd4}
 .secondary{border:1px solid rgba(255,255,255,.35);color:#fff}.secondary:hover{background:rgba(255,255,255,.08)}
-.network-card{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);padding:28px;border-radius:14px;box-shadow:var(--shadow)}
-.network-card .node{padding:15px 18px;border:1px solid rgba(25,200,232,.3);border-radius:8px;margin:12px 0;background:rgba(0,0,0,.13)}
 .node strong{display:block}.node small{color:#aebdd0}
 .connector{height:20px;width:2px;background:var(--cyan);margin:auto;opacity:.7}
 
@@ -75,6 +73,44 @@ section{padding:95px 0}
 .dark{background:var(--navy);color:#fff}.dark .section-head p{color:#aebdd0}
 .dark .card{background:#0d2039;border-color:#203954}.dark .card p{color:#aebdd0}.dark .icon{background:#12345b;color:var(--cyan)}
 
+.brands {
+    background: #f4f7fb;
+}
+
+.brand-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+}
+
+.brand-card {
+    min-height: 125px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    text-align: center;
+    transition: .25s;
+}
+
+.brand-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+    border-color: #c8d7e9;
+}
+
+.brand-logo {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 62px;
+    object-fit: contain;
+}
+
 .services{background:var(--light)}
 .service-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 .service{background:#fff;padding:22px;border:1px solid var(--line);border-radius:10px;display:flex;gap:18px}
@@ -98,14 +134,329 @@ footer ul{list-style:none}footer li{margin:7px 0}
  .navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:var(--navy);padding:20px;flex-direction:column;gap:18px}
  .navlinks.show{display:flex}.menu{display:block}
  .hero-grid{grid-template-columns:1fr;gap:35px}.hero{padding-bottom:70px}
- .cards{grid-template-columns:1fr}.service-list{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}
+ .cards{grid-template-columns:1fr}.brand-grid{grid-template-columns:repeat(3,1fr)}.service-list{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}
  .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:520px){
- h1{font-size:48px}.section-head h2,.cta h2{font-size:34px}
+ h1{font-size:48px}.brand-grid{grid-template-columns:repeat(2,1fr)}.section-head h2,.cta h2{font-size:34px}
  section{padding:72px 0}.stats{grid-template-columns:1fr 1fr}
  .footer-grid{grid-template-columns:1fr}.navbar{height:68px}
  .navlinks{top:68px}.hero{padding-top:68px}
+}
+/* ========================================
+   TECHNOLOGY EXPERTISE CARD
+======================================== */
+
+.technology-card {
+    position: relative;
+
+    padding: 26px;
+
+    border: 1px solid rgba(255, 255, 255, .16);
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, .08),
+            rgba(255, 255, 255, .025)
+        );
+
+    backdrop-filter: blur(14px);
+
+    overflow: hidden;
+}
+
+
+/* Technical grid background */
+
+.technology-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(25, 200, 232, .05) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(25, 200, 232, .05) 1px,
+            transparent 1px
+        );
+
+    background-size: 40px 40px;
+
+    mask-image: linear-gradient(
+        to bottom,
+        black,
+        transparent
+    );
+
+    pointer-events: none;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.technology-header {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 24px;
+}
+
+.technology-label {
+    color: var(--cyan);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.technology-status {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: #aebdd0;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--cyan);
+
+    box-shadow: 0 0 10px var(--cyan);
+}
+
+
+/* ========================================
+   TECHNOLOGY GRID
+======================================== */
+
+.technology-core {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+
+/* ========================================
+   TECHNOLOGY NODE
+======================================== */
+
+.tech-node {
+    min-width: 0;
+    min-height: 76px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px 14px;
+
+    border: 1px solid rgba(25, 200, 232, .20);
+
+    border-radius: 9px;
+
+    background: rgba(13, 32, 57, .72);
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        background .25s ease;
+}
+
+.tech-node:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(25, 200, 232, .55);
+
+    background: rgba(18, 52, 91, .9);
+}
+
+
+/* Icon */
+
+.tech-node-icon {
+    width: 38px;
+    height: 38px;
+
+    flex: 0 0 38px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 8px;
+
+    background: rgba(25, 200, 232, .10);
+
+    color: var(--cyan);
+}
+
+.tech-node-icon svg {
+    width: 19px;
+    height: 19px;
+}
+
+
+/* Text */
+
+.tech-node strong {
+    display: block;
+
+    color: #fff;
+
+    font-size: 12px;
+
+    margin-bottom: 3px;
+}
+
+.tech-node small {
+    display: block;
+
+    color: #9fb1c8;
+
+    font-size: 9px;
+
+    line-height: 1.4;
+}
+
+
+/* ========================================
+   AXIOM TECHNOLOGY BADGE
+======================================== */
+
+.tech-center {
+    position: relative;
+    z-index: 2;
+
+    width: fit-content;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    background: rgba(8, 20, 38, .9);
+
+    border: 1px solid rgba(25, 200, 232, .35);
+
+    color: #fff;
+
+    box-shadow:
+        0 0 20px rgba(25, 200, 232, .08);
+}
+
+.core-icon {
+    display: grid;
+    place-items: center;
+
+    color: var(--cyan);
+}
+
+.core-icon svg {
+    width: 17px;
+    height: 17px;
+}
+
+.tech-center strong {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+.tech-center span {
+    color: var(--cyan);
+
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+
+    font-weight: 700;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.technology-footer {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 18px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(255, 255, 255, .08);
+
+    color: #7f94ad;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+@media (max-width: 520px) {
+
+    .technology-card {
+        padding: 20px;
+    }
+
+    .technology-core {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-node {
+        min-height: 68px;
+    }
+
+    .tech-center {
+        margin-bottom: 18px;
+    }
+
+    .technology-footer {
+        gap: 10px 14px;
+    }
 }
 </style>
 </head>
@@ -115,7 +466,7 @@ footer ul{list-style:none}footer li{margin:7px 0}
   <div class="container navbar">
     <a class="logo" href="#home">AXIOM<span>.</span></a>
     <div class="navlinks" id="navlinks">
-      <a href="#about">ABOUT</a><a href="#solutions">SOLUTIONS</a><a href="#services">SERVICES</a>
+      <a href="#about">ABOUT</a><a href="#solutions">SOLUTIONS</a><a href="#brands">BRANDS</a><a href="#services">SERVICES</a>
       <a href="#projects">PROJECTS</a><a href="#contact" class="navbtn">CONTACT US</a>
     </div>
     <div class="menu" onclick="toggleMenu()">☰</div>
@@ -126,20 +477,114 @@ footer ul{list-style:none}footer li{margin:7px 0}
   <div class="container hero-grid">
     <div>
       <div class="eyebrow">AXIOM SYSTEMS TECHNOLOGIES CORP.</div>
-      <h1>Technology built around your business.</h1>
-      <p>Secure, scalable and reliable IT infrastructure solutions designed to connect people, systems and organizations.</p>
+      <h1>Engineering the infrastructure behind connected businesses.</h1>
+      <p>We design, integrate and support secure network, wireless, cybersecurity, data center and cloud infrastructure built for performance and scale.</p>
       <div class="actions">
         <a class="btn primary" href="#solutions">EXPLORE SOLUTIONS</a>
         <a class="btn secondary" href="#contact">TALK TO OUR TEAM</a>
       </div>
     </div>
-    <div class="network-card">
-      <div class="node"><strong>Enterprise Core</strong><small>Secure & resilient infrastructure</small></div>
-      <div class="connector"></div>
-      <div class="node"><strong>Network & Wireless</strong><small>High-performance connectivity</small></div>
-      <div class="connector"></div>
-      <div class="node"><strong>Users & Applications</strong><small>Reliable access everywhere</small></div>
+	
+  <div class="technology-card">
+    <div class="technology-header">
+        <span class="technology-label">TECHNOLOGY EXPERTISE</span>
+
+        <span class="technology-status">
+            <span class="status-dot"></span>
+            CONNECTED
+        </span>
     </div>
+
+    <!-- Technology Areas -->
+    <div class="technology-core">
+
+        <div class="tech-node">
+            <div class="tech-node-icon">
+                <i data-lucide="network"></i>
+            </div>
+
+            <div>
+                <strong>Network</strong>
+                <small>LAN • WAN • Routing</small>
+            </div>
+        </div>
+
+        <div class="tech-node">
+            <div class="tech-node-icon">
+                <i data-lucide="shield-check"></i>
+            </div>
+
+            <div>
+                <strong>Cybersecurity</strong>
+                <small>Firewall • SASE • Access</small>
+            </div>
+        </div>
+
+        <div class="tech-node">
+            <div class="tech-node-icon">
+                <i data-lucide="wifi"></i>
+            </div>
+
+            <div>
+                <strong>Wireless</strong>
+                <small>Wi-Fi • Mobility • RF</small>
+            </div>
+        </div>
+
+        <div class="tech-node">
+            <div class="tech-node-icon">
+                <i data-lucide="server"></i>
+            </div>
+
+            <div>
+                <strong>Data Center</strong>
+                <small>Compute • Storage • Network</small>
+            </div>
+        </div>
+
+        <div class="tech-node">
+            <div class="tech-node-icon">
+                <i data-lucide="cloud"></i>
+            </div>
+
+            <div>
+                <strong>Cloud &amp; SASE</strong>
+                <small>Cloud • Security • Connectivity</small>
+            </div>
+        </div>
+
+        <div class="tech-node">
+            <div class="tech-node-icon">
+                <i data-lucide="workflow"></i>
+            </div>
+
+            <div>
+                <strong>Integration</strong>
+                <small>Systems • Platforms • Services</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- Axiom Technology -->
+    <div class="tech-center">
+
+        <div class="core-icon">
+            <i data-lucide="network"></i>
+        </div>
+
+        <strong>AXIOM</strong>
+        <span>TECHNOLOGY</span>
+    </div>
+
+    <!-- Technology Process -->
+    <div class="technology-footer">
+        <span>DESIGN</span>
+        <span>IMPLEMENT</span>
+        <span>INTEGRATE</span>
+        <span>OPTIMIZE</span>
+        <span>SUPPORT</span>
+    </div>
+  </div>
   </div>	
 </header>
 
@@ -166,12 +611,45 @@ footer ul{list-style:none}footer li{margin:7px 0}
       <p>Build a strong technology foundation across connectivity, security, data center and cloud environments.</p>
     </div>
     <div class="cards">
-      <div class="card"><div class="icon">⌁</div><h3>Network Infrastructure</h3><p>Campus, LAN, WAN, switching, routing and network architecture.</p></div>
-      <div class="card"><div class="icon">◉</div><h3>Cybersecurity</h3><p>Security architecture, firewalls, access control and secure connectivity.</p></div>
-      <div class="card"><div class="icon">⌁</div><h3>Wireless & Mobility</h3><p>Enterprise Wi-Fi, high-density deployments and wireless optimization.</p></div>
-      <div class="card"><div class="icon">▣</div><h3>Data Center</h3><p>Core infrastructure, compute, storage and resilient data center networks.</p></div>
-      <div class="card"><div class="icon">☁</div><h3>Cloud & SASE</h3><p>Modern connectivity and security architectures for distributed users.</p></div>
-      <div class="card"><div class="icon">+</div><h3>Systems Integration</h3><p>Integration of infrastructure platforms into cohesive technology environments.</p></div>
+      <div class="card"><div class="icon"><i data-lucide="network"></i></div><h3>Network Infrastructure</h3><p>Campus, LAN, WAN, switching, routing and network architecture.</p></div>
+      <div class="card"><div class="icon"><i data-lucide="ShieldCheck"></i></div><h3>Cybersecurity</h3><p>Security architecture, firewalls, access control and secure connectivity.</p></div>
+      <div class="card"><div class="icon"><i data-lucide="Wifi"></i></div><h3>Wireless & Mobility</h3><p>Enterprise Wi-Fi, high-density deployments and wireless optimization.</p></div>
+      <div class="card"><div class="icon"><i data-lucide="Server"></i></div><h3>Data Center</h3><p>Core infrastructure, compute, storage and resilient data center networks.</p></div>
+      <div class="card"><div class="icon"><i data-lucide="Cloud"></i></div><h3>Cloud & SASE</h3><p>Modern connectivity and security architectures for distributed users.</p></div>
+      <div class="card"><div class="icon"><i data-lucide="Workflow"></i></div><h3>Systems Integration</h3><p>Integration of infrastructure platforms into cohesive technology environments.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="brands" id="brands">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">TECHNOLOGY EXPERTISE</div>
+      <h2>Technology platforms we work with.</h2>
+      <p>Our team has experience designing, deploying, integrating and supporting solutions across leading enterprise technology platforms.</p>
+    </div>
+
+    <div class="brand-grid">
+      <div class="brand-card"><img class="brand-logo" src="./media/cisco.webp" alt="Cisco"></div>
+      <div class="brand-card"><img class="brand-logo" src="./media/aruba.webp" alt="Cisco"></div>
+      <div class="brand-card"><img class="brand-logo" src="./media/ruckus.webp" alt="Rcukus"></div>
+      <div class="brand-card"><img class="brand-logo" src="./media/huawei.webp" alt="Huawei"></div>
+      <div class="brand-card"><img class="brand-logo" src="./media/h3c.webp" alt="H3C"></div>
+
+      <div class="brand-card"><img class="brand-logo" src="./media/ekahau.webp" alt="Ekahau"></div>
+      <div class="brand-card"><img class="brand-logo" src="./media/fortinet.webp" alt="Fortinet"></div>
+      <div class="brand-card"><img class="brand-logo" src="./media/sonicwall.webp" alt="Sonicwall"></div>
+      <div class="brand-card"><img class="brand-logo" src="./media/cato.webp" alt="Cato Networks"></div>
+      <div class="brand-card"><img class="brand-logo" src="./media/paloalto.webp" alt="Palo Alto"></div>
+
+      <div class="brand-card"><img class="brand-logo" src="./media/ibm.webp" alt="IBM"></div>
+	  <div class="brand-card"><img class="brand-logo" src="./media/hpe.webp" alt="HPE"></div>
+      <div class="brand-card"><img class="brand-logo" src="./media/lenovo.webp" alt="Lenovo"></div>
+      <div class="brand-card"><img class="brand-logo" src="./media/sangfor.webp" alt="Sangfor"></div>
+      <div class="brand-card"><img class="brand-logo" src="./media/dell.webp" alt="Dell"></div>
+      <div class="brand-card"><img class="brand-logo" src="./media/everpure.webp" alt="Everpure"></div>
+      <div class="brand-card"><img class="brand-logo" src="./media/intercorp.webp" alt="Intercop"></div>
+      
     </div>
   </div>
 </section>
@@ -193,18 +671,145 @@ footer ul{list-style:none}footer li{margin:7px 0}
 </section>
 
 <section id="projects">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">PROJECT EXPERIENCE</div>
-      <h2>Technology across demanding environments.</h2>
-      <p>Showcase your completed projects here with actual customer-approved project information and images.</p>
+    <div class="container">
+
+        <div class="section-head">
+            <div class="eyebrow">INDUSTRIES WE SERVE</div>
+
+            <h2>
+                Infrastructure built<br>
+                for every environment.
+            </h2>
+
+            <p>
+                Delivering secure, scalable and reliable technology
+                infrastructure across diverse industries.
+            </p>
+        </div>
+
+        <div class="cards">
+
+            <!-- Hospitality -->
+            <div class="card">
+                <div class="icon">
+                    <i data-lucide="hotel"></i>
+                </div>
+
+                <h3>Hospitality</h3>
+
+                <p>
+                    Guest Wi-Fi, enterprise networking, IPTV,
+                    security and integrated technology infrastructure.
+                </p>
+            </div>
+
+
+            <!-- Healthcare -->
+            <div class="card">
+                <div class="icon">
+                    <i data-lucide="heart-pulse"></i>
+                </div>
+
+                <h3>Healthcare</h3>
+
+                <p>
+                    Reliable connectivity and secure infrastructure
+                    supporting healthcare operations and critical systems.
+                </p>
+            </div>
+
+
+            <!-- Manufacturing -->
+            <div class="card">
+                <div class="icon">
+                    <i data-lucide="factory"></i>
+                </div>
+
+                <h3>Manufacturing</h3>
+
+                <p>
+                    Industrial connectivity, secure networks and
+                    resilient infrastructure for operational environments.
+                </p>
+            </div>
+
+
+            <!-- Government & Education -->
+            <div class="card">
+                <div class="icon">
+                    <i data-lucide="landmark"></i>
+                </div>
+
+                <h3>Government & Education</h3>
+
+                <p>
+                    Secure and reliable connectivity for government,
+                    academic and mission-critical environments.
+                </p>
+            </div>
+
+
+            <!-- Enterprise -->
+            <div class="card">
+                <div class="icon">
+                    <i data-lucide="building-2"></i>
+                </div>
+
+                <h3>Enterprise</h3>
+
+                <p>
+                    Scalable network, security and infrastructure
+                    solutions supporting business operations.
+                </p>
+            </div>
+
+
+            <!-- Retail & F&B -->
+            <div class="card">
+                <div class="icon">
+                    <i data-lucide="store"></i>
+                </div>
+
+                <h3>Retail & F&amp;B</h3>
+
+                <p>
+                    Reliable connectivity and technology infrastructure
+                    for stores, restaurants and distributed locations.
+                </p>
+            </div>
+
+
+            <!-- Financial Services -->
+            <div class="card">
+                <div class="icon">
+                    <i data-lucide="banknote"></i>
+                </div>
+
+                <h3>Financial Services</h3>
+
+                <p>
+                    Secure, resilient and highly available infrastructure
+                    for financial and business-critical environments.
+                </p>
+            </div>
+
+
+            <!-- Data Center & Technology -->
+            <div class="card">
+                <div class="icon">
+                    <i data-lucide="server"></i>
+                </div>
+
+                <h3>Data Center &amp; Technology</h3>
+
+                <p>
+                    Data center networking, compute, storage and
+                    infrastructure integration for modern IT environments.
+                </p>
+            </div>
+
+        </div>
     </div>
-    <div class="cards">
-      <div class="card"><div class="icon">H</div><h3>Hospitality</h3><p>Guest Wi-Fi, enterprise networking, IPTV and integrated technology infrastructure.</p></div>
-      <div class="card"><div class="icon">G</div><h3>Government & Education</h3><p>Secure and reliable connectivity for mission-critical environments.</p></div>
-      <div class="card"><div class="icon">E</div><h3>Enterprise</h3><p>Scalable network, security and infrastructure solutions for business operations.</p></div>
-    </div>
-  </div>
 </section>
 
 <section class="dark">
@@ -238,8 +843,8 @@ footer ul{list-style:none}footer li{margin:7px 0}
   <div class="container">
     <div class="footer-grid">
       <div><h3>AXIOM<span style="color:var(--cyan)">.</span></h3><p>Axiom Systems Technologies Corp.<br>Technology infrastructure and systems integration.</p></div>
-      <div><h4>QUICK LINKS</h4><ul><li><a href="#about">About Us</a></li><li><a href="#solutions">Solutions</a></li><li><a href="#services">Services</a></li></ul></div>
-      <div><h4>CONTACT</h4><ul><li>Philippines</li><li>info@axiomsystems.tech</li><li>+63 2 0000 0000</li></ul></div>
+      <div><h4>QUICK LINKS</h4><ul><li><a href="#about">About Us</a></li><li><a href="#solutions">Solutions</a></li><li><a href="#brands">Brands</a></li><li><a href="#services">Services</a></li></ul></div>
+      <div><h4>CONTACT</h4><ul><li>Philippines</li><li>info@axiomsystems.tech</li><li>+63 9171562846</li></ul></div>
     </div>
     <div class="copy">© 2026 Axiom Systems Technologies Corp. All rights reserved.</div>
   </div>
