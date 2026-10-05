@@ -91,7 +91,6 @@ nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(6,23,46,.95);back
 .brands{padding-bottom:40px}
 .orbit{position:relative;height:300px;overflow:hidden;perspective:1700px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none;--cw:170px;--ch:100px}
 .orbit.drag{cursor:grabbing}
-.orbit:before{content:"";position:absolute;left:3%;right:3%;top:calc(var(--ch)*.85 + var(--pad,20px));height:calc(var(--ch)*.45);border:1.5px solid rgba(6,23,46,.16);border-radius:50%;pointer-events:none}
 .orbit-ring{position:absolute;left:50%;top:calc(var(--ch)/2 + var(--pad,20px));width:0;height:0;transform-style:preserve-3d}
 .brand-card{position:absolute;left:0;top:0;width:var(--cw);height:var(--ch);margin:calc(var(--ch)/-2) 0 0 calc(var(--cw)/-2);display:flex;align-items:center;justify-content:center;padding:24px;background:#fff;border:1px solid var(--line);border-radius:14px;backface-visibility:hidden;opacity:calc(.4 + .6*var(--f,1));box-shadow:0 0 0 calc(var(--h,0)*4px) var(--fiber),0 calc(8px + var(--h,0)*30px) calc(24px + var(--h,0)*56px) rgba(6,23,46,calc(.1 + var(--h,0)*.22))}
 .brand-logo{max-width:100%;max-height:calc(var(--ch)*.55);width:auto;height:auto;object-fit:contain;filter:grayscale(calc(1 - var(--h,1)));pointer-events:none;-webkit-user-drag:none}
@@ -328,7 +327,9 @@ const orbit=document.getElementById("orbit"),ring=document.getElementById("ring"
 [...ring.children].forEach(el=>{const k=el.cloneNode(true);k.setAttribute("aria-hidden","true");k.querySelector("img").alt="";ring.appendChild(k)});
 const cards=[...ring.children],N=cards.length,step=360/N;
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
-const DWELL=1800,EASE=.1; /* DWELL = pause (ms) on each brand · EASE = turn speed between brands */
+const DWELL=1500,EASE=.1; /* DWELL = pause (ms) on each brand · EASE = turn speed between brands */
+const DRAG_SPEED=.025;      // Higher = faster drag/swipe
+const SWIPE_MOMENTUM=3;   // Higher = more momentum after release
 let angle=0,vel=0,target=null,nextAt=performance.now()+DWELL,R=0,lastX=0,dragging=false,hover=false;
 function render(){
   ring.style.transform="translateZ("+(-R)+"px) rotateY("+angle+"deg)";
@@ -348,8 +349,8 @@ function layout(){
   render();
 }
 orbit.addEventListener("pointerdown",e=>{dragging=true;lastX=e.clientX;vel=0;target=null;orbit.classList.add("drag")});
-window.addEventListener("pointermove",e=>{if(!dragging)return;const d=e.clientX-lastX;lastX=e.clientX;angle+=d*.3;vel=d*.3});
-["pointerup","pointercancel"].forEach(t=>window.addEventListener(t,()=>{if(!dragging)return;dragging=false;orbit.classList.remove("drag");target=Math.round((angle+vel*14)/step)*step;vel=0}));
+window.addEventListener("pointermove",e=>{if(!dragging)return;const d=e.clientX-lastX;lastX=e.clientX;angle+=d*DRAG_SPEED;vel=d*DRAG_SPEED});
+["pointerup","pointercancel"].forEach(t=>window.addEventListener(t,()=>{if(!dragging)return;dragging=false;orbit.classList.remove("drag");target=Math.round((angle+vel*SWIPE_MOMENTUM)/step)*step;vel=0}));
 orbit.addEventListener("mouseenter",()=>{hover=true;if(target===null)target=Math.round(angle/step)*step});orbit.addEventListener("mouseleave",()=>{hover=false;nextAt=performance.now()+1500});
 orbit.addEventListener("keydown",e=>{const n=Math.round(angle/step);if(e.key==="ArrowLeft")target=(n+1)*step;if(e.key==="ArrowRight")target=(n-1)*step});
 window.addEventListener("resize",layout);
