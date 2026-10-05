@@ -36,10 +36,8 @@ nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(6,23,46,.95);back
 .navlinks .navbtn:hover{color:var(--ink);background:#fff}
 .menu{display:none;border:0;background:none;color:#fff;font-size:28px;cursor:pointer;padding:4px}
 
-/* HERO — rack-rail motif on the left edge */
+/* HERO */
 .hero{min-height:100vh;padding:76px 0 0;background:var(--ink);color:#fff;display:flex;align-items:center;position:relative;overflow:hidden}
-.hero:before{content:"";position:absolute;left:0;top:0;bottom:0;width:26px;background:
-  repeating-linear-gradient(to bottom,transparent 0 28px,rgba(255,255,255,.22) 28px 30px),var(--ink2);border-right:1px solid #1d3e69}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;padding:60px 0}
 .hero h1{font-size:clamp(36px,4.9vw,66px);font-weight:700;margin-bottom:26px}
 .hero p{font-size:18px;color:#b9c8dc;max-width:560px;margin-bottom:36px}
@@ -64,49 +62,65 @@ nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(6,23,46,.95);back
 /* ABOUT */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px}
 .art{width:100%;height:auto;border-radius:14px;display:block;margin-top:36px}
-.sol-top{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center;margin-bottom:56px}
-.sol-top .sol-head{margin:0}.sol-top .art{margin:0}
 .about h2{font-size:clamp(30px,3.8vw,46px);font-weight:700}
 .about .lead{font-size:20px;margin-bottom:34px}
 .about dl div{padding:18px 0;border-top:1px solid var(--line)}
 .about dt{font-family:var(--display);font-weight:600;font-size:18px}
 .about dd{color:#4a5d78;font-size:15px}
 
-/* SOLUTIONS — principles, not cards */
+/* SOLUTIONS */
 .dark{background:var(--ink);color:#fff}
-.sol-head{max-width:720px;margin-bottom:56px}
-.sol-head h2{font-size:clamp(30px,3.8vw,46px);font-weight:700;margin-bottom:16px}
-.sol-head p{color:#9fb2cb;font-size:17px}
-.sol{display:grid;grid-template-columns:1.1fr 1.2fr 40px;gap:30px;align-items:center;padding:28px 0 28px 22px;border-top:1px solid #1d3a5f;position:relative;transition:background .25s}
-.sol:last-child{border-bottom:1px solid #1d3a5f}
-.sol:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--fiber);transform:scaleY(0);transition:transform .25s}
-.sol:hover{background:var(--ink2)}.sol:hover:before{transform:scaleY(1)}
-.sol h3{font-size:clamp(19px,2.2vw,26px);font-weight:600;color:#fff}
-.sol b{display:block;font-size:15px;color:var(--fiber);margin-bottom:3px;font-weight:600}
-.sol p{color:#9fb2cb;font-size:15px}
-.sol svg{width:26px;height:26px;color:var(--fiber)}
+
+.sec-head{text-align:center;max-width:720px;margin:0 auto 50px}
+.sec-head h2{font-size:clamp(30px,3.8vw,46px);font-weight:700;margin-bottom:15px}
+.sec-head p{color:#9fb2cb;font-size:17px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{border:1px solid #203954;border-radius:12px;padding:30px;background:var(--ink2);transition:transform .25s,box-shadow .25s,border-color .25s}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 50px rgba(0,0,0,.35);border-color:#2e5083}
+.card .icon{width:50px;height:50px;border-radius:10px;background:#12345b;color:var(--fiber);display:grid;place-items:center;margin-bottom:20px}
+.card .icon svg{width:25px;height:25px}
+.card h3{font-size:20px;margin-bottom:9px;font-weight:600}
+.card p{color:#9fb2cb;font-size:14px}
 
 /* BRANDS — one shared grid, logos rest in grayscale */
-.brand-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:44px;flex-wrap:wrap}
+.brand-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:34px;flex-wrap:wrap}
 .brand-head h2{font-size:clamp(28px,3.3vw,40px);font-weight:700;max-width:560px}
 .brand-head p{max-width:400px;color:#4a5d78}
-.brand-grid{display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);background:var(--white)}
-.brand-card{height:118px;display:flex;align-items:center;justify-content:center;padding:22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
-.brand-logo{max-width:100%;max-height:52px;width:auto;height:auto;object-fit:contain;filter:grayscale(1);opacity:.65;transition:filter .25s,opacity .25s}
-.brand-card:hover .brand-logo{filter:none;opacity:1}
 
-/* LIFECYCLE */
-.services{background:var(--white)}
-.services h2{font-size:clamp(30px,3.8vw,46px);font-weight:700;max-width:720px;margin-bottom:64px}
-.track{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;position:relative}
-.track:before{content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:var(--ink)}
-.stage{position:relative;padding-top:40px}
-.stage:before{content:"";position:absolute;top:0;left:0;width:20px;height:20px;border-radius:50%;background:var(--fiber);border:3px solid var(--ink)}
-.stage h3{font-size:24px;font-weight:700;margin-bottom:4px}
-.stage em{font-style:normal;font-weight:600;font-size:14px;color:var(--steel);display:block;margin-bottom:10px}
-.stage p{font-size:15px;color:#4a5d78}
+
+.brands{padding-bottom:40px}
+.orbit{position:relative;height:300px;overflow:hidden;perspective:1700px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none;--cw:170px;--ch:100px}
+.orbit.drag{cursor:grabbing}
+.orbit:before{content:"";position:absolute;left:3%;right:3%;top:calc(var(--ch)*.85 + var(--pad,20px));height:calc(var(--ch)*.45);border:1.5px solid rgba(6,23,46,.16);border-radius:50%;pointer-events:none}
+.orbit-ring{position:absolute;left:50%;top:calc(var(--ch)/2 + var(--pad,20px));width:0;height:0;transform-style:preserve-3d}
+.brand-card{position:absolute;left:0;top:0;width:var(--cw);height:var(--ch);margin:calc(var(--ch)/-2) 0 0 calc(var(--cw)/-2);display:flex;align-items:center;justify-content:center;padding:24px;background:#fff;border:1px solid var(--line);border-radius:14px;backface-visibility:hidden;opacity:calc(.4 + .6*var(--f,1));box-shadow:0 0 0 calc(var(--h,0)*4px) var(--fiber),0 calc(8px + var(--h,0)*30px) calc(24px + var(--h,0)*56px) rgba(6,23,46,calc(.1 + var(--h,0)*.22))}
+.brand-logo{max-width:100%;max-height:calc(var(--ch)*.55);width:auto;height:auto;object-fit:contain;filter:grayscale(calc(1 - var(--h,1)));pointer-events:none;-webkit-user-drag:none}
+.orbit-hint{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;padding:7px 16px;border-radius:30px;background:rgba(255,255,255,.85);border:1px solid var(--line);color:#4a5d78;font-size:13px;white-space:nowrap;pointer-events:none}
+.orbit-hint svg{width:16px;height:16px;color:var(--ink)}
+
+/* PROCESS */
+.phase-img{position:relative;aspect-ratio:4/3;margin-top:14px;border-radius:10px;overflow:hidden;background:var(--ink2);display:grid;place-items:center;color:#2c5384}
+.phase-img svg{width:44px;height:44px}
+.phase-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.phase-img:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,23,46,.05),rgba(6,23,46,.45))}
+.phase:hover .phase-img img{transform:scale(1.05)}
+.phase-note{padding:18px 14px 0 24px;font-size:15px;color:#4a5d78}
+.services h2{margin-bottom:48px}
+.track{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.phase-head{display:flex;align-items:center;gap:12px;padding:20px 38px 20px 34px;background:var(--ink);color:#fff;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 50%,calc(100% - 24px) 100%,0 100%,24px 50%)}
+.phase:first-child .phase-head{padding-left:24px;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 50%,calc(100% - 24px) 100%,0 100%)}
+.phase-head svg{width:26px;height:26px;flex:none;color:var(--fiber)}
+.phase-head small{display:block;font-size:12px;font-weight:600;letter-spacing:.08em;color:var(--fiber)}
+.phase-head h3{font-size:22px;font-weight:700}
+.phase{transition:transform .25s}
+.phase-head,.phase-head svg,.phase-head small,.phase-note{transition:background .25s,color .25s}
+.phase:hover{transform:translateY(-4px)}
+.phase:hover .phase-head{background:var(--fiber);color:var(--ink)}
+.phase:hover .phase-head svg,.phase:hover small{color:var(--ink)}
+.phase:hover .phase-note{color:var(--ink)}
 
 /* INDUSTRIES */
+#industries{background:var(--white)}
 .ind-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
 .ind-grid h2{font-size:clamp(28px,3.3vw,40px);font-weight:700;margin-bottom:16px}
 .ind-grid > div:first-child p{color:#4a5d78}
@@ -134,16 +148,14 @@ footer a:hover{color:var(--fiber)}
   section{padding:76px 0}
   .navlinks{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;gap:18px;padding:22px;background:var(--ink)}
   .navlinks.show{display:flex}.menu{display:block}
-  .hero-grid,.about-grid,.ind-grid,.cta-grid,.sol-top{grid-template-columns:1fr;gap:40px}
-  .hero{padding-left:0}.hero-grid{padding-left:34px}
-  .sol{grid-template-columns:1fr 32px;gap:10px 16px}.sol > div:nth-child(2){grid-column:1/-1;order:3}
-  .brand-grid{grid-template-columns:repeat(3,1fr)}
-  .track{grid-template-columns:1fr 1fr;row-gap:44px}.track:before{display:none}
+  .hero-grid,.about-grid,.ind-grid,.cta-grid{grid-template-columns:1fr;gap:40px}
+  .cards{grid-template-columns:1fr 1fr}
+    .sol{grid-template-columns:1fr 32px;gap:10px 16px}.sol > div:nth-child(2){grid-column:1/-1;order:3}
+  .track{grid-template-columns:1fr 1fr;row-gap:30px}.phase-head,.phase:first-child .phase-head{clip-path:none;padding:18px 22px}
   .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:560px){
-  .brand-grid{grid-template-columns:repeat(2,1fr)}
-  .track,.ind-list,.footer-grid{grid-template-columns:1fr}
+  .track,.ind-list,.footer-grid,.cards{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){
   .topo .pulse{animation:none}html{scroll-behavior:auto}*{transition:none!important}
@@ -156,7 +168,7 @@ footer a:hover{color:var(--fiber)}
   <div class="container navbar">
     <a class="logo" href="#home">AXIOM<span>.</span></a>
     <div class="navlinks" id="navlinks">
-      <a href="#about">About</a><a href="#solutions">Solutions</a><a href="#brands">Platforms</a><a href="#services">How we work</a>
+      <a href="#services">How we work</a><a href="#solutions">Solutions</a><a href="#brands">Platforms</a>
       <a href="#industries">Industries</a><a href="#contact" class="navbtn">Contact us</a>
     </div>
     <button class="menu" type="button" onclick="toggleMenu()" aria-label="Open navigation" aria-expanded="false" aria-controls="navlinks">☰</button>
@@ -200,32 +212,27 @@ footer a:hover{color:var(--fiber)}
   </div>
 </header>
 
-<section class="about" id="about">
-  <div class="container about-grid">
-    <div><h2>Technology built around your business.</h2><svg class="art" viewBox="0 0 420 300" role="img" aria-label="Network rack with switches and patch cables"><defs><pattern id="pt" width="16" height="16" patternUnits="userSpaceOnUse"><rect x="2" y="2" width="10" height="10" rx="1.5" fill="#12345b" stroke="#2c5384"/></pattern></defs><rect width="420" height="300" rx="14" fill="#0d2848"/><rect x="50" y="24" width="270" height="252" rx="6" fill="#06172e" stroke="#27476f"/><rect x="62" y="40" width="246" height="56" rx="3" fill="#0d2848" stroke="#27476f"/><rect x="74" y="54" width="176" height="28" fill="url(#pt)"/><circle cx="272" cy="60" r="4" fill="#ffd23f"/><circle cx="288" cy="60" r="4" fill="#ffd23f" opacity=".4"/><rect x="266" y="74" width="30" height="4" fill="#27476f"/><rect x="62" y="110" width="246" height="56" rx="3" fill="#0d2848" stroke="#27476f"/><rect x="74" y="124" width="176" height="28" fill="url(#pt)"/><circle cx="272" cy="130" r="4" fill="#ffd23f"/><circle cx="288" cy="130" r="4" fill="#ffd23f" opacity=".4"/><rect x="266" y="144" width="30" height="4" fill="#27476f"/><rect x="62" y="180" width="246" height="56" rx="3" fill="#0d2848" stroke="#27476f"/><rect x="74" y="194" width="176" height="28" fill="url(#pt)"/><circle cx="272" cy="200" r="4" fill="#ffd23f"/><circle cx="288" cy="200" r="4" fill="#ffd23f" opacity=".4"/><rect x="266" y="214" width="30" height="4" fill="#27476f"/><g fill="none" stroke="#ffd23f" stroke-width="3" stroke-linecap="round"><path d="M250 68C350 68 340 118 385 118"/><path d="M250 138C345 138 345 188 385 188"/><path d="M250 208C350 208 345 68 385 68"/></g><g fill="#ffd23f"><circle cx="385" cy="68" r="5"/><circle cx="385" cy="118" r="5"/><circle cx="385" cy="188" r="5"/></g></svg></div>
-    <div>
-      <p class="lead">Axiom Systems Technologies Corp. is an IT services company specializing in the design, deployment, integration and management of secure, scalable, high-performance IT infrastructure.</p>
-      <dl>
-        <div><dt>Infrastructure first</dt><dd>We design reliable environments around performance, scalability, security and the specific requirements of your organization.</dd></div>
-        <div><dt>End-to-end delivery</dt><dd>From consulting and architecture to implementation, integration, optimization and ongoing support, we stay with a solution through its lifecycle.</dd></div>
-        <div><dt>Secure and business driven</dt><dd>We align technology with business objectives while strengthening security, improving efficiency and enabling you to scale.</dd></div>
-      </dl>
-    </div>
+<section class="services" id="services">
+  <div class="container">
+    <h2>From first assessment to daily operations.</h2>
+    <div class="track"><div class="phase"><div class="phase-head"><i data-lucide="clipboard-check"></i><div><small>PHASE 01</small><h3>Assess</h3></div></div><div class="phase-img"><i data-lucide="clipboard-check"></i><img src="./media/phase-assess.webp" alt="Engineer carrying out a network and Wi-Fi site survey" loading="lazy" onerror="this.remove()"></div><p class="phase-note">We review your current infrastructure, troubleshoot issues and optimize performance.</p></div><div class="phase"><div class="phase-head"><i data-lucide="pencil-ruler"></i><div><small>PHASE 02</small><h3>Design</h3></div></div><div class="phase-img"><i data-lucide="pencil-ruler"></i><img src="./media/phase-design.webp" alt="Team planning a network design at a whiteboard" loading="lazy" onerror="this.remove()"></div><p class="phase-note">We turn your requirements into a clear high-level and low-level design and plan.</p></div><div class="phase"><div class="phase-head"><i data-lucide="rocket"></i><div><small>PHASE 03</small><h3>Deploy</h3></div></div><div class="phase-img"><i data-lucide="rocket"></i><img src="./media/phase-deploy.webp" alt="Engineer installing and configuring network equipment" loading="lazy" onerror="this.remove()"></div><p class="phase-note">We install, configure, migrate and integrate, then commission the solution.</p></div><div class="phase"><div class="phase-head"><i data-lucide="headset"></i><div><small>PHASE 04</small><h3>Support</h3></div></div><div class="phase-img"><i data-lucide="headset"></i><img src="./media/phase-support.webp" alt="Support engineers monitoring network operations" loading="lazy" onerror="this.remove()"></div><p class="phase-note">We provide operational support, maintenance and technical assistance.</p></div></div>
   </div>
 </section>
 
 <section class="dark" id="solutions">
   <div class="container">
-    <div class="sol-top"><div class="sol-head">
-      <h2>Six things your infrastructure has to get right.</h2>
-      <p>A strong technology foundation across connectivity, security, data center and cloud environments.</p>
-    </div><svg class="art" viewBox="0 0 320 240" role="img" aria-label="Shield surrounded by connected security layers"><rect width="320" height="240" rx="14" fill="#0d2848"/><g fill="none" stroke="#27476f" stroke-width="1.5" stroke-dasharray="4 6"><circle cx="160" cy="120" r="105"/><circle cx="160" cy="120" r="72"/></g><g fill="#ffd23f"><circle cx="265" cy="120" r="5"/><circle cx="55" cy="120" r="5"/><circle cx="160" cy="15" r="5"/><circle cx="234" cy="194" r="5"/><circle cx="86" cy="46" r="5"/></g><path d="M160 40L220 62V118C220 156 192 184 160 198C128 184 100 156 100 118V62Z" fill="#06172e" stroke="#ffd23f" stroke-width="3"/><path d="M132 120l20 20 38-42" fill="none" stroke="#ffd23f" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    <div class="sol"><div><h3>Everything connects through it.</h3></div><div><b>Network Infrastructure</b><p>Campus, LAN, WAN, switching, routing and network architecture.</p></div><i data-lucide="network"></i></div>
-    <div class="sol"><div><h3>Access is earned, not assumed.</h3></div><div><b>Cybersecurity</b><p>Security architecture, firewalls, access control and secure connectivity.</p></div><i data-lucide="shield-check"></i></div>
-    <div class="sol"><div><h3>People don't stay at their desks.</h3></div><div><b>Wireless &amp; Mobility</b><p>Enterprise Wi-Fi, high-density deployments and wireless optimization.</p></div><i data-lucide="wifi"></i></div>
-    <div class="sol"><div><h3>Some things can't go down.</h3></div><div><b>Data Center</b><p>Core infrastructure, compute, storage and resilient data center networks.</p></div><i data-lucide="server"></i></div>
-    <div class="sol"><div><h3>The office is wherever the user is.</h3></div><div><b>Cloud &amp; SASE</b><p>Modern connectivity and security architectures for distributed users.</p></div><i data-lucide="cloud"></i></div>
-    <div class="sol"><div><h3>Parts should behave as one system.</h3></div><div><b>Systems Integration</b><p>Integration of infrastructure platforms into cohesive technology environments.</p></div><i data-lucide="workflow"></i></div>
+    <div class="sec-head">
+      <h2>Infrastructure for the connected enterprise.</h2>
+      <p>Build a strong technology foundation across connectivity, security, data center and cloud environments.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="icon"><i data-lucide="network"></i></div><h3>Network Infrastructure</h3><p>Campus, LAN, WAN, switching, routing and network architecture.</p></div>
+      <div class="card"><div class="icon"><i data-lucide="shield-check"></i></div><h3>Cybersecurity</h3><p>Security architecture, firewalls, access control and secure connectivity.</p></div>
+      <div class="card"><div class="icon"><i data-lucide="wifi"></i></div><h3>Wireless &amp; Mobility</h3><p>Enterprise Wi-Fi, high-density deployments and wireless optimization.</p></div>
+      <div class="card"><div class="icon"><i data-lucide="server"></i></div><h3>Data Center</h3><p>Core infrastructure, compute, storage and resilient data center networks.</p></div>
+      <div class="card"><div class="icon"><i data-lucide="cloud"></i></div><h3>Cloud &amp; SASE</h3><p>Modern connectivity and security architectures for distributed users.</p></div>
+      <div class="card"><div class="icon"><i data-lucide="workflow"></i></div><h3>Systems Integration</h3><p>Integration of infrastructure platforms into cohesive technology environments.</p></div>
+    </div>
   </div>
 </section>
 
@@ -235,7 +242,10 @@ footer a:hover{color:var(--fiber)}
       <h2>Platforms our engineers know inside out.</h2>
       <p>Experience designing, deploying, integrating and supporting solutions across leading enterprise technology platforms.</p>
     </div>
-    <div class="brand-grid">
+
+  </div>
+  <div class="orbit" id="orbit" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Technology platforms. Drag or use arrow keys to rotate">
+      <div class="orbit-ring" id="ring">
       <div class="brand-card"><img class="brand-logo" src="./media/cisco.webp" alt="Cisco"></div>
       <div class="brand-card"><img class="brand-logo" src="./media/aruba.webp" alt="Aruba"></div>
       <div class="brand-card"><img class="brand-logo" src="./media/ruckus.webp" alt="Ruckus"></div>
@@ -253,20 +263,9 @@ footer a:hover{color:var(--fiber)}
       <div class="brand-card"><img class="brand-logo" src="./media/dell.webp" alt="Dell"></div>
       <div class="brand-card"><img class="brand-logo" src="./media/everpure.webp" alt="Everpure"></div>
       <div class="brand-card"><img class="brand-logo" src="./media/intercorp.webp" alt="Intercorp"></div>
+      </div>
+      <div class="orbit-hint"><i data-lucide="move-horizontal"></i>Drag or swipe to spin</div>
     </div>
-  </div>
-</section>
-
-<section class="services" id="services">
-  <div class="container">
-    <h2>From first assessment to daily operations.</h2>
-    <div class="track">
-      <div class="stage"><h3>Assess</h3><em>Assessment &amp; optimization</em><p>Infrastructure assessment, troubleshooting, performance and RF optimization.</p></div>
-      <div class="stage"><h3>Design</h3><em>Network design &amp; architecture</em><p>Requirements, high-level design, low-level design and implementation planning.</p></div>
-      <div class="stage"><h3>Deploy</h3><em>Implementation &amp; deployment</em><p>Installation, configuration, migration, integration and commissioning.</p></div>
-      <div class="stage"><h3>Support</h3><em>Managed &amp; technical support</em><p>Operational support, maintenance and technical assistance.</p></div>
-    </div>
-  </div>
 </section>
 
 <section id="industries">
@@ -303,7 +302,7 @@ footer a:hover{color:var(--fiber)}
   <div class="container">
     <div class="footer-grid">
       <div><h3 style="font-family:Inter,'Segoe UI',Arial,sans-serif">AXIOM<span style="color:var(--fiber)">.</span></h3><p>Axiom Systems Technologies Corp.<br>Technology infrastructure and systems integration.</p></div>
-      <div><h4>Quick links</h4><ul><li><a href="#about">About us</a></li><li><a href="#solutions">Solutions</a></li><li><a href="#brands">Platforms</a></li><li><a href="#services">How we work</a></li><li><a href="#industries">Industries</a></li></ul></div>
+      <div><h4>Quick links</h4><ul><li><a href="#services">How we work</a></li><li><a href="#solutions">Solutions</a></li><li><a href="#brands">Platforms</a></li><li><a href="#industries">Industries</a></li></ul></div>
       <div><h4>Contact</h4><ul><li>Philippines</li><li>info@axiomsystems.tech</li><li>+63 9171562846</li></ul></div>
     </div>
     <div class="copy">© 2026 Axiom Systems Technologies Corp. All rights reserved.</div>
@@ -324,6 +323,45 @@ navLinks.querySelectorAll("a").forEach(l=>l.addEventListener("click",()=>{
   menuButton.setAttribute("aria-expanded","false");
   menuButton.setAttribute("aria-label","Open navigation");
 }));
+
+const orbit=document.getElementById("orbit"),ring=document.getElementById("ring");
+[...ring.children].forEach(el=>{const k=el.cloneNode(true);k.setAttribute("aria-hidden","true");k.querySelector("img").alt="";ring.appendChild(k)});
+const cards=[...ring.children],N=cards.length,step=360/N;
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const DWELL=1800,EASE=.1; /* DWELL = pause (ms) on each brand · EASE = turn speed between brands */
+let angle=0,vel=0,target=null,nextAt=performance.now()+DWELL,R=0,lastX=0,dragging=false,hover=false;
+function render(){
+  ring.style.transform="translateZ("+(-R)+"px) rotateY("+angle+"deg)";
+  cards.forEach((c,i)=>{
+    const a=i*step+angle,d=((a%360)+540)%360-180,h=Math.max(0,1-Math.abs(d)/(step*.3));
+    c.style.setProperty("--f",Math.max(0,Math.cos(a*Math.PI/180)).toFixed(3));
+    c.style.setProperty("--h",h.toFixed(3));
+    c.style.transform="rotateY("+i*step+"deg) translateZ("+R+"px) scale("+(.92+h*.36).toFixed(3)+")";
+  });
+}
+function layout(){
+  const cw=Math.round(Math.min(440,Math.max(200,orbit.clientWidth*.23))),ch=Math.round(cw*.6);
+  orbit.style.setProperty("--cw",cw+"px");orbit.style.setProperty("--ch",ch+"px");
+  R=Math.round((cw*1.3/2)/Math.tan(Math.PI/N)+14);
+  const pad=Math.round(ch*.14+36);orbit.style.setProperty("--pad",pad+"px");orbit.style.height=Math.round(pad+ch*1.4+46)+"px";orbit.style.perspective=Math.round(R*2.1)+"px";orbit.style.perspectiveOrigin="50% "+Math.round(pad+ch/2)+"px";
+  cards.forEach((c,i)=>c.style.transform="rotateY("+i*step+"deg) translateZ("+R+"px)");
+  render();
+}
+orbit.addEventListener("pointerdown",e=>{dragging=true;lastX=e.clientX;vel=0;target=null;orbit.classList.add("drag")});
+window.addEventListener("pointermove",e=>{if(!dragging)return;const d=e.clientX-lastX;lastX=e.clientX;angle+=d*.3;vel=d*.3});
+["pointerup","pointercancel"].forEach(t=>window.addEventListener(t,()=>{if(!dragging)return;dragging=false;orbit.classList.remove("drag");target=Math.round((angle+vel*14)/step)*step;vel=0}));
+orbit.addEventListener("mouseenter",()=>{hover=true;if(target===null)target=Math.round(angle/step)*step});orbit.addEventListener("mouseleave",()=>{hover=false;nextAt=performance.now()+1500});
+orbit.addEventListener("keydown",e=>{const n=Math.round(angle/step);if(e.key==="ArrowLeft")target=(n+1)*step;if(e.key==="ArrowRight")target=(n-1)*step});
+window.addEventListener("resize",layout);
+function tick(){
+  if(!dragging){
+    if(target!==null){angle+=(target-angle)*EASE;if(Math.abs(target-angle)<.05){angle=target;target=null;nextAt=performance.now()+DWELL}}
+    else if(!hover&&!reduce&&performance.now()>=nextAt)target=(Math.round(angle/step)-1)*step;
+  }
+  render();requestAnimationFrame(tick);
+}
+window.addEventListener("load",()=>{if(target===null)nextAt=performance.now()+DWELL});
+layout();tick();
 </script>
 </body>
 </html>
