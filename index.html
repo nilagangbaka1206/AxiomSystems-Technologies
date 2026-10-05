@@ -141,7 +141,7 @@ nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(6,23,46,.95);back
 .phase-img:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,23,46,.05),rgba(6,23,46,.45))}
 .phase:hover .phase-img img{transform:scale(1.05)}
 .phase-note{padding:18px 14px 0 24px;font-size:15px;color:#4a5d78}
-.services h2{margin-bottom:48px}
+.services h2{margin-bottom:48px;font-size:45px;}
 .track{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .phase-head{display:flex;align-items:center;gap:12px;padding:20px 38px 20px 34px;background:var(--ink);color:#fff;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 50%,calc(100% - 24px) 100%,0 100%,24px 50%)}
 .phase:first-child .phase-head{padding-left:24px;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 50%,calc(100% - 24px) 100%,0 100%)}
@@ -191,7 +191,40 @@ footer a:hover{color:var(--fiber)}
   .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:560px){
-  .track,.ind-list,.footer-grid,.cards{grid-template-columns:1fr}
+
+  .track,
+  .ind-list,
+  .footer-grid,
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  /* Smaller service cards on mobile */
+  .card{
+    padding:20px;
+    border-radius:10px;
+  }
+
+  .card .icon{
+    width:44px;
+    height:44px;
+    margin-bottom:14px;
+  }
+
+  .card .icon svg{
+    width:22px;
+    height:22px;
+  }
+
+  .card h3{
+    font-size:18px;
+    margin-bottom:7px;
+  }
+
+  .card p{
+    font-size:13px;
+    line-height:1.5;
+  }
 }
 @media (prefers-reduced-motion:reduce){
   .topo .pulse{animation:none}html{scroll-behavior:auto}*{transition:none!important}
@@ -215,7 +248,7 @@ footer a:hover{color:var(--fiber)}
   <div class="container hero-grid">
     <div>
       <h1>Infrastructure that has to work, engineered to keep working.</h1>
-      <p>Axiom Systems Technologies designs, integrates and supports secure network, wireless, cybersecurity, data center and cloud infrastructure built for performance and scale.</p>
+      <p>Axiom Systems Technologies designs, integrates, and supports secure network, wireless, cybersecurity, data center, and cloud infrastructure engineered for performance, reliability, and scale.</p>
       <div class="actions">
         <a class="btn primary" href="#solutions">Explore solutions</a>
         <a class="btn ghost" href="#contact">Talk to our team</a>
@@ -250,8 +283,8 @@ footer a:hover{color:var(--fiber)}
 
 <section class="services" id="services">
   <div class="container">
-    <h2>From first assessment to daily operations.</h2>
-    <div class="track"><div class="phase"><div class="phase-head"><i data-lucide="clipboard-check"></i><div><small>PHASE 01</small><h3>Assess</h3></div></div><div class="phase-img"><i data-lucide="clipboard-check"></i><img src="./media/phase-assess.webp" alt="Engineer carrying out a network and Wi-Fi site survey" loading="lazy" onerror="this.remove()"></div><p class="phase-note">We review your current infrastructure, troubleshoot issues and optimize performance.</p></div><div class="phase"><div class="phase-head"><i data-lucide="pencil-ruler"></i><div><small>PHASE 02</small><h3>Design</h3></div></div><div class="phase-img"><i data-lucide="pencil-ruler"></i><img src="./media/phase-design.webp" alt="Team planning a network design at a whiteboard" loading="lazy" onerror="this.remove()"></div><p class="phase-note">We turn your requirements into a clear high-level and low-level design and plan.</p></div><div class="phase"><div class="phase-head"><i data-lucide="rocket"></i><div><small>PHASE 03</small><h3>Deploy</h3></div></div><div class="phase-img"><i data-lucide="rocket"></i><img src="./media/phase-deploy.webp" alt="Engineer installing and configuring network equipment" loading="lazy" onerror="this.remove()"></div><p class="phase-note">We install, configure, migrate and integrate, then commission the solution.</p></div><div class="phase"><div class="phase-head"><i data-lucide="headset"></i><div><small>PHASE 04</small><h3>Support</h3></div></div><div class="phase-img"><i data-lucide="headset"></i><img src="./media/phase-support.webp" alt="Support engineers monitoring network operations" loading="lazy" onerror="this.remove()"></div><p class="phase-note">We provide operational support, maintenance and technical assistance.</p></div></div>
+    <h2>From the first assessment to daily operations.</h2>
+    <div class="track"><div class="phase"><div class="phase-head"><i data-lucide="clipboard-check"></i><div><small>PHASE 01</small><h3>Assess</h3></div></div><div class="phase-img"><i data-lucide="clipboard-check"></i><img src="./media/phase-assess.webp" alt="Engineer carrying out a network and Wi-Fi site survey" loading="lazy" onerror="this.remove()"></div><p class="phase-note">We assess your existing infrastructure, identify performance and reliability gaps, and uncover opportunities for optimization.</p></div><div class="phase"><div class="phase-head"><i data-lucide="pencil-ruler"></i><div><small>PHASE 02</small><h3>Design</h3></div></div><div class="phase-img"><i data-lucide="pencil-ruler"></i><img src="./media/phase-design.webp" alt="Team planning a network design at a whiteboard" loading="lazy" onerror="this.remove()"></div><p class="phase-note">We turn your requirements into a future-ready technology architecture designed for performance, scalability, security, and long-term reliability.</p></div><div class="phase"><div class="phase-head"><i data-lucide="rocket"></i><div><small>PHASE 03</small><h3>Deploy</h3></div></div><div class="phase-img"><i data-lucide="rocket"></i><img src="./media/phase-deploy.webp" alt="Engineer installing and configuring network equipment" loading="lazy" onerror="this.remove()"></div><p class="phase-note">We deploy and integrate your solution with precision, minimizing disruption and ensuring a smooth transition to operations.</p></div><div class="phase"><div class="phase-head"><i data-lucide="headset"></i><div><small>PHASE 04</small><h3>Support</h3></div></div><div class="phase-img"><i data-lucide="headset"></i><img src="./media/phase-support.webp" alt="Support engineers monitoring network operations" loading="lazy" onerror="this.remove()"></div><p class="phase-note">We keep your technology running reliably with proactive support, continuous optimization, and expert assistance when you need it.</p></div></div>
   </div>
 </section>
 
