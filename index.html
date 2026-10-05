@@ -8,10 +8,22 @@
 <link rel="canonical" href="https://axiomsystemstech.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="AxiomSystems Technologies | Network, Cybersecurity &amp; IT Infrastructure">
-<meta property="og:description" content="Network infrastructure, enterprise Wi-Fi, cybersecurity, data center, cloud and SASE solutions.">
 <meta property="og:url" content="https://axiomsystemstech.com/">
-<meta property="og:image" content="https://axiomsystemstech.com/media/og-image.webp">
-  <link rel="icon" href="/media/favicon.png">
+<meta property="og:description" content="Network infrastructure, enterprise Wi-Fi, cybersecurity, data center, cloud and SASE solutions.">
+<meta property="og:site_name" content="Axiom Systems Technologies Corp.">
+<meta property="og:image" content="https://axiomsystemstech.com/media/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Axiom Systems Technologies Corp. logo with the tagline: Infrastructure you never have to think about.">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Axiom Systems Technologies | Network, Cybersecurity &amp; IT Infrastructure">
+<meta name="twitter:description" content="Network infrastructure, enterprise Wi-Fi, cybersecurity, data center, cloud and SASE solutions.">
+<meta name="twitter:image" content="https://axiomsystemstech.com/media/og-image.png">
+
+<link rel="icon" href="/media/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/media/favicon.png">
+<link rel="apple-touch-icon" href="/media/apple-touch-icon.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -164,7 +176,7 @@ nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(6,23,46,.95);back
 .phase-img:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,23,46,.05),rgba(6,23,46,.45))}
 .phase:hover .phase-img img{transform:scale(1.05)}
 .phase-note{padding:18px 14px 0 24px;font-size:15px;color:#4a5d78}
-.services h2{margin-bottom:48px;font-size:45px;}
+.services h2{margin-bottom:48px;font-size:clamp(30px,3.8vw,46px);}
 .track{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .phase-head{display:flex;align-items:center;gap:12px;padding:20px 38px 20px 34px;background:var(--ink);color:#fff;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 50%,calc(100% - 24px) 100%,0 100%,24px 50%)}
 .phase:first-child .phase-head{padding-left:24px;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 50%,calc(100% - 24px) 100%,0 100%)}
@@ -367,28 +379,28 @@ footer a:hover{color:var(--fiber)}
       <p>Secure, scalable and reliable infrastructure across diverse industries.</p>
 	    <div class="industry-slideshow">
 			<img src="./media/industries-1.webp"
-				 alt="Enterprise technology infrastructure"
+				 alt="Retail store environment"
 				 class="industry-slide active">
 
 			<img src="./media/industries-2.webp"
-				 alt="Hospitality technology infrastructure"
-				 class="industry-slide">
+				 alt="Hotel lobby and guest areas"
+				 class="industry-slide" loading="lazy">
 
 			<img src="./media/industries-3.webp"
-				 alt="Network engineering and infrastructure"
-				 class="industry-slide">
+				 alt="Modern office workspace"
+				 class="industry-slide" loading="lazy">
 
 			<img src="./media/industries-4.webp"
-				 alt="Data center and technology infrastructure"
-				 class="industry-slide">
+				 alt="Hospital corridor and patient care area"
+				 class="industry-slide" loading="lazy">
 
 			<img src="./media/industries-5.webp"
-				 alt="Data center and technology infrastructure"
-				 class="industry-slide">
+				 alt="Manufacturing plant floor"
+				 class="industry-slide" loading="lazy">
 
 			<img src="./media/industries-6.webp"
-				 alt="Data center and technology infrastructure"
-				 class="industry-slide">				 
+				 alt="University classroom or campus"
+				 class="industry-slide" loading="lazy">				 
 		</div>
     </div>
     <div class="ind-list">
@@ -418,7 +430,7 @@ footer a:hover{color:var(--fiber)}
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div><h3 style="font-family:Inter,'Segoe UI',Arial,sans-serif">AXIOM<span style="color:var(--fiber)">.</span></h3><p>AxiomSystems Technologies Corp.<br>Philippines<br>Network Infrastructure | Cybersecurity | Wireless & Mobility | Data Center | Cloud & SASE | Systems Integration</p></div>
+      <div><h3 style="font-family:Inter,'Segoe UI',Arial,sans-serif">AXIOM<span style="color:var(--fiber)">.</span></h3><p>AxiomSystems Technologies Corp.<br>Philippines<br>Network Infrastructure | Cybersecurity | Wireless &amp Mobility | Data Center | Cloud &amp SASE | Systems Integration</p></div>
       <div><h4>Quick links</h4><ul><li><a href="#services">How we work</a></li><li><a href="#solutions">Solutions</a></li><li><a href="#brands">Platforms</a></li><li><a href="#industries">Industries</a></li></ul></div>
       <div><h4>Contact</h4><ul><li>Philippines</li><li>info@axiomsystemstech.com</li><li>+63 9171562846</li></ul></div>
     </div>
@@ -471,7 +483,7 @@ function layout(){
 orbit.addEventListener("pointerdown",e=>{dragging=true;lastX=e.clientX;vel=0;target=null;orbit.classList.add("drag")});
 window.addEventListener("pointermove",e=>{if(!dragging)return;const d=e.clientX-lastX;lastX=e.clientX;angle+=d*DRAG_SPEED;vel=d*DRAG_SPEED});
 ["pointerup","pointercancel"].forEach(t=>window.addEventListener(t,()=>{if(!dragging)return;dragging=false;orbit.classList.remove("drag");target=Math.round((angle+vel*SWIPE_MOMENTUM)/step)*step;vel=0}));
-orbit.addEventListener("mouseenter",()=>{hover=true;if(target===null)target=Math.round(angle/step)*step});orbit.addEventListener("mouseleave",()=>{hover=false;nextAt=performance.now()+1500});
+orbit.addEventListener("mouseenter",()=>{hover=true;if(target===null)target=Math.round(angle/step)*step});orbit.addEventListener("mouseleave",()=>{hover=false;nextAt=performance.now()+DWELL});
 orbit.addEventListener("keydown",e=>{const n=Math.round(angle/step);if(e.key==="ArrowLeft")target=(n+1)*step;if(e.key==="ArrowRight")target=(n-1)*step});
 window.addEventListener("resize",layout);
 function tick(){
@@ -485,13 +497,16 @@ window.addEventListener("load",()=>{if(target===null)nextAt=performance.now()+DW
 layout();tick();
 
 let industryIndex = 0;
+let industryPaused = false;
+const slideshow = document.querySelector(".industry-slideshow");
+slideshow.addEventListener("mouseenter", () => industryPaused = true);
+slideshow.addEventListener("mouseleave", () => industryPaused = false);
 
-if (industrySlides.length > 1) {
+if (industrySlides.length > 1 && !reduce) {
     setInterval(() => {
+        if (industryPaused) return;
         industrySlides[industryIndex].classList.remove("active");
-
         industryIndex = (industryIndex + 1) % industrySlides.length;
-
         industrySlides[industryIndex].classList.add("active");
     }, 4500);
 }
